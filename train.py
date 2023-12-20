@@ -70,8 +70,7 @@ def train_agent(cfg : DictConfig) -> None:
             path = os.path.join(
                     os.path.expanduser('~'), 
                     'Git',
-                    'pixel_gcrl',
-                    'results', 
+                    'pixel_gcrl', 
                     'pretrained_vae', 
                     'num_obs_500_beta_2',
                     'state_dict')

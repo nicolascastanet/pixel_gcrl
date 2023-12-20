@@ -148,22 +148,7 @@ def learn(
         
         if vae_pretrain_oracle and not vae_ready:
             
-                # Load state dict in case of the use of a pretrained VAE
-                assert conf.vae.state_dict_path is not None
-                #TODO remove hard coded path
-                path = os.path.join(
-                    os.path.expanduser('~'), 'Git','pixel_gcrl','results', 'pretrained_vae', 'num_obs_500_beta_2','state_dict')
-                state = torch.load(path)
-                vae_obs.encoder.load_state_dict(state['encoder'])
-                vae_obs.decoder.load_state_dict(state['decoder'])
-                
-                cpu_encoder_state_dict = {k: v.cpu() for k, v in vae_obs.encoder.state_dict().items()}
-                for e in [env, eval_env, mult_eval_env]:
-                    e.embed.load_state_dict(cpu_encoder_state_dict)
-                
-                vae_ready = True
-                
-                
+                vae_ready = True    
                 # PLOT LATENT CODES
                 plot_latent_codes(env=eval_env, 
                                   nb_goals=50, 
@@ -172,8 +157,6 @@ def learn(
                                 )
                 
                     
-                            
-        
     grid_succ_plot_step = 0
 
     for i in range(max_steps // env_info["num_envs"]):
@@ -288,7 +271,7 @@ def learn(
             if not i % max(vae_oe // env_info["num_envs"], 1) and i > 0 and not vae_pretrain_oracle:
                 
                 # Sample batch and train VAE
-                transitions = sample_random_buffer(buffer, batch_size=1000)
+                transitions = sample_random_buffer(buffer, batch_size=100)
                 
                 # Compute pixel observation from initial observation
                 init_obs = transitions['observation.init_obs'] # eg. 2D position in maze
@@ -308,7 +291,7 @@ def learn(
                 
                 train_dataset = data.TensorDataset(obs_batch)
                 train_dataloader = data.DataLoader(train_dataset, 
-                                                        batch_size=batch_size)
+                                                        batch_size=100)
                 
                 _ = train_vae_model(vae_obs, vae_opt, train_dataloader, nb_steps=50, beta=2)
                 

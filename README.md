@@ -19,9 +19,9 @@ Fork this repository with the following path:  `~/Git/pixel_gcrl`
 ### Organization
 
 The `xpag` directory contains blocks for the RL algorithm, buffers, setter, HER, learning/plotting functions etc... See readme file inside the directory for more informations. 
-The main RL trainig loop is located in the file `xpag/tools/learn.py`, other training such as VAE for pixel based input are done in this file.
+The main RL training loop is located in the file `xpag/tools/learn.py`, other training such as VAE for pixel based input are done in this file.
 
-The `train()` function is used to launch experiments, `make_setters()` is used to build the blocks of every setters methods such as `SVGG`, `MEGA`, `Goal-GAN` or `RIG`. The setters implementation are located in `xpag/setters/setter.py`, for `SVGG`, the folder `xpag/svgg/` contains many building block of the methods such its energy based distribution criterion in `xpag/svgg/criterion.py`, or the algoritmh `SVGD` in `xpag/svgg/svgd.py`.
+The `train.py` script is used to launch experiments, `make_setters.py` is used to build the blocks of every setters methods such as `SVGG`, `MEGA`, `Goal-GAN` or `RIG`. The setters implementation are located in `xpag/setters/setter.py`, for `SVGG`, the folder `xpag/svgg/` contains many building block of the methods such its energy based distribution criterion in `xpag/svgg/criterion.py`, or the algoritmh `SVGD` in `xpag/svgg/svgd.py`.
 
 
 ### launch Experiments
