@@ -1,0 +1,45 @@
+method:
+  name: RIG_TQC/MAZE_0
+  make_setter: make_rig
+  plot: true
+save_episode: true
+seed: 0
+plot_goals: false
+rl_algo: TQC
+env:
+  max_episode_steps: 50
+  num_envs: 20
+  maze_type: square_pbcs_0
+  xml_files: None
+  num_eval_rollout: 500
+  change_env_steps_list: None
+  from_pixel: true
+  cnn_policy: false
+  latent_dim_obs: 2
+  dist_thresh_latent: 0.15
+  reward: sparse
+vae:
+  state_dict_path: None
+  pretrain: false
+  learning_rate: 0.001
+  beta: 1
+actor:
+  gamma: 0.98
+  actor_lr: 0.001
+  actor_layers:
+  - 512
+  - 512
+  - 512
+  critic_lr: 0.001
+  critic_layers:
+  - 512
+  - 512
+  - 512
+  tau: 0.05
+  target_update_period: 40
+  buffer_size: 1000000
+  batch_size: 2000
+  gd_steps_per_step: 1
+  max_steps: 4000000
+  evaluate_every_x_steps: 10000
+  save_agent_every_x_steps: 100000

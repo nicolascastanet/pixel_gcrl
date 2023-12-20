@@ -1,0 +1,16 @@
+name: 'svgg_buffer'
+make_setter: make_svgg_buffer
+plot: False
+
+criterion:
+  alpha: 2
+  beta: 2
+  temp: 2
+
+sp_model:
+  layers: [64, 64]
+  optimize_every_x_steps: 1_000
+  batch_size: 100
+  history_length: 200
+  k_steps_optimization: 100
+  weight_decay: 1e-3

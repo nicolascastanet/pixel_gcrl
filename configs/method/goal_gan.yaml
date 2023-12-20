@@ -1,0 +1,29 @@
+name: 'goal_gan'
+make_setter: make_goal_gan
+plot: False
+
+sp_model:
+  layers: [128, 128]
+  optimize_every_x_steps: 5_000
+  batch_size: 100
+  history_length: 200
+  k_steps_optimization: 100
+  weight_decay: 1e-3
+
+gan:
+  k_steps: 200
+  disc_layers: [128, 128]
+  gen_layers: [128, 128]
+  noise_dim: 10
+  p_min: 0.2
+  p_max: 0.8
+  batch_size: 1000
+  history_length: 1000
+  optimize_every_x_steps: 1000
+  prior: False
+
+prior:
+  gamma: 0.1
+  ood_percent: 0.01
+  batch_size: 1000
+  optimize_every_x_steps: 5_000

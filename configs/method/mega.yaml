@@ -1,0 +1,12 @@
+name: 'mega'
+make_setter: make_mega
+plot: False
+
+criterion:
+  kernel: 'gaussian'
+  bandwidth: 0.1
+  num_ag_candidate: 500
+  optimize_every_x_steps: 5_000
+  batch_size: 10_000
+  randomize: False
+  alpha_skew: -1

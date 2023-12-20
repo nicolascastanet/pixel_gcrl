@@ -1,0 +1,6 @@
+- rl_algo=TQC
+- env.maze_type=square_pbcs_0
+- method=svgg
+- method.plot=True
+- actor.evaluate_every_x_steps=10000
+- method.name=SVGG_TQC_test/PBCS_0

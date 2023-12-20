@@ -1,0 +1,3 @@
+name: 'default'
+make_setter: make_default
+plot: False

@@ -1,0 +1,3 @@
+name: 'uniform'
+make_setter: make_uniform
+plot: False

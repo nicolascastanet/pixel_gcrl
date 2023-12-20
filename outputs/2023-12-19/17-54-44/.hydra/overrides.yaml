@@ -1,0 +1,10 @@
+- rl_algo=TQC
+- env.maze_type=square_pbcs_0
+- method=svgg
+- method.prior.gamma=0.5
+- method.criterion.temp=3
+- method.sp_model.layers=[64,64]
+- method.plot=True
+- actor.evaluate_every_x_steps=10000
+- method.name=SVGG_TQC_TEMP_3/PBCS_0
+- actor.batch_size=2000

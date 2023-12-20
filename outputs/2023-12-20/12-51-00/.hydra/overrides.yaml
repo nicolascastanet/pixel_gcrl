@@ -1,0 +1,8 @@
+- rl_algo=TQC
+- env.maze_type=square_pbcs_0
+- method=rig
+- actor.evaluate_every_x_steps=10000
+- method.name=RIG_TQC/MAZE_0
+- method.plot=True
+- env.from_pixel=True
+- env.latent_dim_obs=2

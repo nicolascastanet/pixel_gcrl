@@ -1,0 +1,2 @@
+from xpag.plotting.plotting import single_episode_plot, plot_achieved_goals, plot_decision_boundary
+from xpag.plotting.sib_maze_plot import plot_grid_coverage, plot_latent_codes

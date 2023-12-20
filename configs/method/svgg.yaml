@@ -1,0 +1,39 @@
+name: 'svgg'
+make_setter: make_svgg
+plot: False
+
+mode: "difficulty"
+difficulty_mode: "alpha_beta"
+
+criterion:
+  alpha: 2
+  beta: 2
+  temp: 3
+
+sp_model:
+  layers: [64, 64]
+  optimize_every_x_steps: 5_000
+  batch_size: 100
+  history_length: 200
+  k_steps_optimization: 100
+  weight_decay: 1e-3
+
+prior:
+  type: 'ocsvm' # in {'ocsvm', 'normal'}
+  gamma: 0.5
+  ood_percent: 0.01
+  batch_size: 1000
+  optimize_every_x_steps: 5_000
+
+
+particles:
+  annealed: True
+  annealed_freq: 5
+  sigma: 1
+  num: 200
+  lr: 0.05
+  optimize_every_x_steps: 20
+  num_steps_per_opt: 10
+  init_std: 0.01
+
+
